@@ -5,8 +5,15 @@ on: ["push"]
 jobs:
   job1:
     runs-on: ubuntu-latest
-    # if: startsWith(github.ref, 'refs/tags/') # Run job1 only when a tag is pushed
     steps:
       - name: print
         run: |
           echo $GITHUB_REF
+  job_tag:
+    runs-on: ubuntu-latest
+    if: ${{ startsWith(github.ref, 'refs/tags/') && success() }}
+    needs: job1
+    steps:
+      - name: Tagged
+        run: |
+          echo I am tagged
