@@ -6,9 +6,9 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: print
+      - name: Fail it
         run: |
-          echo $GITHUB_REF
+          exit -1
   job_tag:
     runs-on: ubuntu-latest
     if: ${{ startsWith(github.ref, 'refs/tags/') && success() }}
