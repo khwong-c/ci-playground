@@ -6,11 +6,14 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Build Verilator
+      - name: Install Verilator
         run: |
           sudo apt install libjs-underscore libjs-jquery fonts-font-awesome fonts-lato
           wget -q http://mirrors.kernel.org/ubuntu/pool/main/s/sphinx/libjs-sphinxdoc_5.3.0-4_all.deb
           wget -q http://mirrors.kernel.org/ubuntu/pool/main/s/sphinx-rtd-theme/sphinx-rtd-theme-common_1.3.0+dfsg-1_all.deb
           wget -q http://mirrors.kernel.org/ubuntu/pool/universe/v/verilator/verilator_5.012-1_amd64.deb
           sudo dpkg -i sphinx-rtd-theme-common_1.3.0+dfsg-1_all.deb libjs-sphinxdoc_5.3.0-4_all.deb verilator_5.012-1_amd64.deb
+      - name: Check Version
+        run: verilator -V
+
           
