@@ -13,7 +13,6 @@ jobs:
           sudo apt-get -y install libgoogle-perftools-dev numactl perl-doc libunwind-dev
           sudo apt-get -y install libfl2  # Ubuntu only (ignore if gives error)
           sudo apt-get -y install libfl-dev  # Ubuntu only (ignore if gives error)
-          sudo apt-get -y install zlibc zlib1g zlib1g-dev  # Ubuntu only (ignore if gives error)
           
           git clone https://github.com/verilator/verilator   # Only first time
           
